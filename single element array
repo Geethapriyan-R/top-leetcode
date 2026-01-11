@@ -1,0 +1,27 @@
+// Online C compiler to run C program online
+#include <stdio.h>
+int subarray(int *nums,int numsize){
+    int count=0;
+    for(int i=0;i<numsize;i++){
+        int sum=0;
+        for(int j=i;j<numsize;j++){
+            sum+=nums[j];
+            for( int k=i;k<=j;k++){
+                if(nums[k]==sum){
+                    count++;
+                    break;
+                }
+            }
+        }
+    }
+     return count;
+}
+int main() {
+    // Write C code here
+ int  nums[5]={-3,-1,0,1,3};
+ int  numsize=5;
+   subarray(nums,numsize);
+   printf("%d\n",subarray(nums,numsize));
+
+    return 0;
+}
